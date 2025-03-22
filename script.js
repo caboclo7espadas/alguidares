@@ -135,3 +135,47 @@ function scrollCategories(scrollAmount) {
         behavior: 'smooth'
     });
 }
+
+
+// Funções para abrir/fechar o modal
+function openLoginModal() {
+    document.getElementById('login-modal').style.display = 'block';
+}
+
+function closeLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+}
+
+// Login com Google
+function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            alert(`Bem-vindo, ${result.user.displayName}!`);
+            closeLoginModal();
+        })
+        .catch((error) => {
+            alert(`Erro: ${error.message}`);
+        });
+}
+
+// Login com Facebook
+function loginWithFacebook() {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            alert(`Bem-vindo, ${result.user.displayName}!`);
+            closeLoginModal();
+        })
+        .catch((error) => {
+            alert(`Erro: ${error.message}`);
+        });
+}
+
+function scrollCategories(scrollAmount) {
+    const categories = document.querySelector('.categories');
+    categories.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
