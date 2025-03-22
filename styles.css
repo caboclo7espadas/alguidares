@@ -1,300 +1,284 @@
-/* Estilos Globais */
+/* Estilos gerais */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-i {
-  margin-right: 5px;
-}
-
-input {
-  box-sizing: border-box;
-}
-
-ul {
-  padding: 0;
-}
-
-/* Header e Navegação */
-header {
-  background-color: #1e1e1e;
-  padding: 10px 0;
-}
-
+/* Top Bar */
 .top-bar {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-  width: 40px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .nav {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 15px;
 }
 
 .nav a {
-  color: #ffa500;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
-.nav a:hover {
-  color: #e69500;
-}
-
-/* Opções do Usuário */
 .user-options {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .user-options a {
-  color: #fff;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
-.user-options input[type="text"] {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ffa500;
-  background-color: #333;
-  color: #fff;
-}
-
-.user-options input[type="text"]::placeholder {
-  color: #ccc;
-}
-
-/* Container Principal */
+/* Container */
 .container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+    padding: 20px;
 }
 
-/* Detalhes do Produto */
-.product-details {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 40px;
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 .product-gallery {
-  flex: 1;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product-gallery img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.product-gallery img:hover {
-  transform: scale(1.05);
+    max-width: 100%;
+    height: auto;
 }
 
 .gallery-thumbnails {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-  justify-content: center;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .gallery-thumbnails img {
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  transition: border 0.3s, transform 0.3s;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
-.gallery-thumbnails img:hover {
-  border: 2px solid #ffa500;
-  transform: scale(1.1);
-}
-
-/* Informações do Produto */
 .product-info {
-  flex: 1;
-}
-
-.product-path {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.product-info h2 {
-  font-size: 2.5rem;
-  margin: 10px 0;
-  color: #e0e0e0;
-}
-
-.product-code {
-  color: #777;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 2rem;
-  color: #ffa500;
-  margin: 10px 0;
-}
-
-.rating {
-  color: #81c784;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .product-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #b0b0b0;
-  margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
 }
 
-/* Botões de Ação */
+.price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
 .buttons {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
-.add-to-cart,
-.add-to-wishlist {
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s, color 0.3s;
+.buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
 }
 
-.add-to-cart {
-  background-color: #ffa500;
-  color: #121212;
+.buttons button:hover {
+    background-color: #555;
 }
 
-.add-to-cart:hover {
-  background-color: #e69500;
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.add-to-wishlist {
-  background-color: transparent;
-  color: #ffa500;
-  border: 2px solid #ffa500;
+.quantity-control button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
 }
 
-.add-to-wishlist:hover {
-  background-color: #ffa500;
-  color: #121212;
+.quantity-control input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
 }
 
-/* Rodapé */
+/* Footer */
 .footer {
-  background-color: #1e1e1e;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 10px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .footer h3 {
-  color: #ffa500;
-  margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
 }
 
 .footer p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
 }
 
 .footer ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footer ul li {
-  margin-bottom: 10px;
-  font-size: 0.9rem;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
 }
 
-.footer ul li strong {
-  color: #ffa500;
+/* Responsividade */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    .product-grid {
+
+/* Container das categorias */
+.categories-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
 }
 
-/* Estilos para o modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+/* Botões de rolagem */
+.scroll-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
 }
 
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
+.scroll-button:hover {
+    background-color: #555;
 }
 
-/* Estilos para o botão Voltar para o Catálogo */
-.back-to-catalog {
-  text-align: center;
-  margin: 40px 0;
+/* Lista de categorias */
+.categories {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 0 10px;
+    flex: 1;
 }
 
-.back-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ffa500;
-  color: #121212;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
+.categories a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    background-color: #444;
+    border-radius: 5px;
 }
 
-.back-button:hover {
-  background-color: #e69500;
-  color: #fff;
+.categories a:hover {
+    background-color: #666;
 }
 
-.back-button i {
-  margin-right: 5px;
+/* Esconde a barra de rolagem */
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.categories {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Estilos para os créditos do rodapé */
+.footer-credits {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-credits a {
+    color: #ffcc00; /* Cor do link */
+    text-decoration: none;
+}
+
+.footer-credits a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o botão da loja */
+.store-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.store-button:hover {
+    background-color: #e6b800;
 }

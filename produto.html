@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Umbanda">
+                <h1>Catálogo de Alguidares</h1>
+            </div>
+            <nav class="nav">
+                <a href="#">Alguidares</a>
+                <a href="#">Oferendas</a>
+                <a href="#">Rituais</a>
+                <a href="#">Contato</a>
+            </nav>
+            <div class="user-options">
+                <a href="#"><i class="fas fa-user"></i> Login / Cadastro</a>
+                <input type="text" id="search" placeholder="Buscar produto">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="product-details">
+            <div class="product-gallery">
+                <img src="img/001.jpg" alt="Alguidar Nº 00000">
+                <div class="gallery-thumbnails">
+                    <img src="img/001.jpg" alt="Alguidar Nº 00000 - Detalhe 1">
+                    <img src="img/002.jpg" alt="Alguidar Nº 00000 - Detalhe 2">
+                    <img src="img/003.jpg" alt="Alguidar Nº 00000 - Detalhe 3">
+                    <img src="img/004.jpg" alt="Alguidar Nº 00000 - Detalhe 4">
+                    <img src="img/005.jpg" alt="Alguidar Nº 00000 - Detalhe 5">
+                </div>
+            </div>
+            <div class="product-info">
+                <h2>Alguidar Nº 00000 (10 cm x 10 cm)</h2>
+                <p class="product-description">
+                    Este alguidar é ideal para pequenas oferendas ou rituais íntimos. Suas dimensões compactas o tornam adequado para oferecer ervas, flores ou pequenas porções de alimentos, proporcionando simplicidade e precisão nos rituais.
+                </p>
+                <p class="price">R$ 7,00</p>
+                <div class="quantity-control">
+                    <button class="decrease">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="increase">+</button>
+                </div>
+                <div class="buttons">
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
+                    </button>
+                    <button class="add-to-wishlist">
+                        <i class="fas fa-heart"></i> Adicionar à lista de desejos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Informações Adicionais</h3>
+            <p>
+                As medidas podem variar de acordo com o fabricante e a forma artesanal de produção.
+                Para maior precisão, recomenda-se conferir as dimensões reais ao adquirir um alguidar.
+            </p>
+            <ul>
+                <li><strong>Material:</strong> Barro (sem verniz)</li>
+                <li><strong>Uso:</strong> Oferendas, padês e rituais religiosos</li>
+                <li><strong>Características:</strong> Produto artesanal, podendo apresentar variações no tamanho e formato.</li>
+            </ul>
+            <h3>Contato</h3>
+            <p>Email: contato@umbanda.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
