@@ -9,53 +9,44 @@
 </head>
 <body>
     <header>
-    <div class="top-bar">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo Umbanda">
-            <h1>Catálogo de Alguidares</h1>
-        </div>
-        <div class="categories-container">
-            <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
-            <div class="categories">
-                <a href="#">Alguidares</a>
-                <a href="#">Velas Palitos 1Kg</a>
-                <a href="#">Quartinhas</a>
-                <a href="#">Velas 7 Dias</a>
-                <a href="#">Tinturas Magias</a>
-                <a href="#">Banhos de Ervas</a>
-                <a href="#">Tridentes</a>
-                <a href="#">Baralhos Diversos</a>
-                <a href="#">Pedras Naturais</a>
-                <a href="#">Pós e Óleos</a>
-                <a href="#">Pregos</a>
-                <a href="#">Parafusos</a>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Umbanda">
+                <h1>Catálogo de Alguidares</h1>
             </div>
-            <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
-        </div>
-        <div class="user-options">
-            <a href="#" class="login-button" onclick="openLoginModal()">
-                <i class="fas fa-user"></i> Login / Cadastro
+            <div class="categories-container">
+                <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
+                <div class="categories">
+                    <a href="#">Alguidares</a>
+                    <a href="#">Velas Palitos 1Kg</a>
+                    <a href="#">Quartinhas</a>
+                    <a href="#">Velas 7 Dias</a>
+                    <a href="#">Tinturas Magias</a>
+                    <a href="#">Banhos de Ervas</a>
+                    <a href="#">Tridentes</a>
+                    <a href="#">Baralhos Diversos</a>
+                    <a href="#">Pedras Naturais</a>
+                    <a href="#">Pós e Óleos</a>
+                    <a href="#">Pregos</a>
+                    <a href="#">Parafusos</a>
+                </div>
+                <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
+            </div>
             <div class="user-options">
-    <a href="#" class="login-button" onclick="openLoginModal()">
-        <i class="fas fa-user"></i> Login / Cadastro
-    </a>
-    <!-- Botão para abrir a popup de exclusão de dados -->
-    <a href="#" class="delete-data-button" onclick="openDeleteDataPopup()">
-        <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
-    </a>
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar produto">
-        <i class="fas fa-search"></i>
-    </div>
-</div>
-    </a>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar produto">
-                <i class="fas fa-search"></i>
+                <a href="#" class="login-button" onclick="openLoginModal()">
+                    <i class="fas fa-user"></i> Login / Cadastro
+                </a>
+                <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
+                    <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
+                </a>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Buscar produto">
+                    <i class="fas fa-search" onclick="searchProducts()"></i>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+
     <main class="container">
         <div class="product-grid">
             <!-- Alguidar Nº 00000 -->
@@ -77,13 +68,13 @@
                     </p>
                     <p class="price" data-price="7.00">R$ 7,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-00000')">-</button>
                         <input type="number" id="quantity-00000" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-00000')">+</button>
                     </div>
                     <p class="total-price">R$ 7,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 00000', 7.00, 'quantity-00000')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -112,13 +103,13 @@
                     </p>
                     <p class="price" data-price="8.00">R$ 8,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-0000')">-</button>
                         <input type="number" id="quantity-0000" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-0000')">+</button>
                     </div>
                     <p class="total-price">R$ 8,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 0000', 8.00, 'quantity-0000')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -147,13 +138,13 @@
                     </p>
                     <p class="price" data-price="9.00">R$ 9,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-000')">-</button>
                         <input type="number" id="quantity-000" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-000')">+</button>
                     </div>
                     <p class="total-price">R$ 9,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 000', 9.00, 'quantity-000')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -182,13 +173,13 @@
                     </p>
                     <p class="price" data-price="10.00">R$ 10,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-00')">-</button>
                         <input type="number" id="quantity-00" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-00')">+</button>
                     </div>
                     <p class="total-price">R$ 10,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 00', 10.00, 'quantity-00')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -217,13 +208,13 @@
                     </p>
                     <p class="price" data-price="11.00">R$ 11,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-0')">-</button>
                         <input type="number" id="quantity-0" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-0')">+</button>
                     </div>
                     <p class="total-price">R$ 11,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 0', 11.00, 'quantity-0')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -252,13 +243,13 @@
                     </p>
                     <p class="price" data-price="12.00">R$ 12,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-1')">-</button>
                         <input type="number" id="quantity-1" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-1')">+</button>
                     </div>
                     <p class="total-price">R$ 12,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 1', 12.00, 'quantity-1')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -287,13 +278,13 @@
                     </p>
                     <p class="price" data-price="13.00">R$ 13,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-2')">-</button>
                         <input type="number" id="quantity-2" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-2')">+</button>
                     </div>
                     <p class="total-price">R$ 13,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 2', 13.00, 'quantity-2')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -322,13 +313,13 @@
                     </p>
                     <p class="price" data-price="14.00">R$ 14,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-3')">-</button>
                         <input type="number" id="quantity-3" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-3')">+</button>
                     </div>
                     <p class="total-price">R$ 14,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 3', 14.00, 'quantity-3')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -357,13 +348,13 @@
                     </p>
                     <p class="price" data-price="15.00">R$ 15,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-4')">-</button>
                         <input type="number" id="quantity-4" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-4')">+</button>
                     </div>
                     <p class="total-price">R$ 15,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 4', 15.00, 'quantity-4')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -392,13 +383,13 @@
                     </p>
                     <p class="price" data-price="16.00">R$ 16,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-5')">-</button>
                         <input type="number" id="quantity-5" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-5')">+</button>
                     </div>
                     <p class="total-price">R$ 16,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 5', 16.00, 'quantity-5')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -427,13 +418,13 @@
                     </p>
                     <p class="price" data-price="17.00">R$ 17,00</p>
                     <div class="quantity-control">
-                        <button class="decrease">-</button>
+                        <button class="decrease" onclick="decreaseQuantity('quantity-6')">-</button>
                         <input type="number" id="quantity-6" value="1" min="1" max="99">
-                        <button class="increase">+</button>
+                        <button class="increase" onclick="increaseQuantity('quantity-6')">+</button>
                     </div>
                     <p class="total-price">R$ 17,00</p>
                     <div class="buttons">
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="addToCart('Alguidar Nº 6', 17.00, 'quantity-6')">
                             <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
                         </button>
                         <button class="add-to-wishlist">
@@ -445,7 +436,6 @@
         </div>
     </main>
 
-    <!-- Rodapé com Informações Adicionais -->
     <footer class="footer">
         <div class="footer-content">
             <h3>Informações Adicionais</h3>
@@ -458,178 +448,38 @@
                 <li><strong>Uso:</strong> Oferendas, padês e rituais religiosos</li>
                 <li><strong>Características:</strong> Produto artesanal, podendo apresentar variações no tamanho e formato.</li>
             </ul>
-        <h3>Contato</h3>
-        <p>Email: terreiro.umbanda.caboclo7espadas@gmail.com</p>
-        <p>Telefone: +55 11 98255-1647</p>
+            <h3>Contato</h3>
+            <p>Email: terreiro.umbanda.caboclo7espadas@gmail.com</p>
+            <p>Telefone: +55 11 98255-1647</p>
+            <a href="https://terreiro-escola-umbanda.systeme.io/nossa-loja" class="store-button" target="_blank">
+                Visite Nossa Loja
+            </a>
+        </div>
+    </footer>
 
-	<!-- Botão para a loja -->
-        <a href="https://terreiro-escola-umbanda.systeme.io/nossa-loja" class="store-button" target="_blank">
-            Visite Nossa Loja
-        </a>
+    <div class="footer-credits">
+        <p>Criado com ❤️ por <strong>Black Tuxedo E-Commerce Brasil</strong> | CNPJ: 37.258.590/0001-67</p>
     </div>
-</footer>
 
-<!-- Popup de Exclusão de Dados -->
-<div id="delete-data-popup" class="popup">
-    <div class="popup-content">
-        <span class="close" onclick="closeDeleteDataPopup()">&times;</span>
-        <h1>Solicitar Exclusão de Dados</h1>
-        <p>
-            Se você deseja solicitar a exclusão dos seus dados pessoais armazenados em nosso sistema, siga as instruções abaixo.
-        </p>
-
-        <h2>Como Solicitar a Exclusão</h2>
-        <p>
-            Para solicitar a exclusão dos seus dados, entre em contato conosco por e-mail ou telefone:
-        </p>
-        <ul>
-            <li><strong>E-mail:</strong> <a href="mailto:terreiro.umbanda.caboclo7espadas@gmail.com">terreiro.umbanda.caboclo7espadas@gmail.com</a></li>
-            <li><strong>Telefone:</strong> +55 11 98255-1647</li>
-        </ul>
-        <p>
-            Ao entrar em contato, forneça as seguintes informações:
-        </p>
-        <ul>
-            <li><strong>Nome completo:</strong> O nome associado à sua conta.</li>
-            <li><strong>E-mail:</strong> O endereço de e-mail associado à sua conta.</li>
-            <li><strong>Assunto:</strong> Use o assunto "Solicitação de Exclusão de Dados".</li>
-            <li><strong>Mensagem:</strong> Inclua uma breve descrição da sua solicitação.</li>
-        </ul>
-
-        <h2>O Que Acontece Depois?</h2>
-        <p>
-            Após recebermos sua solicitação, nossa equipe entrará em contato em até <strong>7 dias úteis</strong> para confirmar a exclusão dos seus dados.
-        </p>
-
-        <h2>Quais Dados Serão Excluídos?</h2>
-        <p>
-            Ao solicitar a exclusão, os seguintes dados serão removidos do nosso sistema:
-        </p>
-        <ul>
-            <li>Seu perfil de usuário (nome, e-mail, foto, etc.).</li>
-            <li>Dados de autenticação (credenciais de login).</li>
-            <li>Quaisquer outras informações pessoais associadas à sua conta.</li>
-        </ul>
-
-        <h2>Dúvidas ou Ajuda?</h2>
-        <p>
-            Se você tiver alguma dúvida ou precisar de assistência, entre em contato conosco pelo e-mail <a href="mailto:terreiro.umbanda.caboclo7espadas@gmail.com">terreiro.umbanda.caboclo7espadas@gmail.com</a> ou pelo telefone <strong>+55 11 98255-1647</strong>.
-        </p>
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login / Cadastro</h2>
+            <button class="facebook-login" onclick="loginWithFacebook()">
+                <i class="fab fa-facebook"></i> Continuar com Facebook
+            </button>
+            <button class="google-login" onclick="loginWithGoogle()">
+                <i class="fab fa-google"></i> Continuar com Google
+            </button>
+        </div>
     </div>
-</div>
-
-<!-- Créditos abaixo do rodapé -->
-<div class="footer-credits">
-    <p>Criado com ❤️ por <strong>Black Tuxedo E-Commerce Brasil</strong> | CNPJ: 37.258.590/0001-67</p>
-</div>
-    </div>
-</footer>
-
-    <!-- Inserir o JavaScript aqui -->
-    <script>
-        // Função para aumentar a quantidade
-        function increaseQuantity(id) {
-            const quantityInput = document.getElementById(id);
-            let currentValue = parseInt(quantityInput.value);
-
-            // Define um limite máximo (opcional)
-            const maxValue = 99; // Você pode ajustar esse valor
-            if (currentValue < maxValue) {
-                quantityInput.value = currentValue + 1;
-                updateTotalPrice(id); // Atualiza o preço total (se necessário)
-            }
-        }
-
-        // Função para diminuir a quantidade
-        function decreaseQuantity(id) {
-            const quantityInput = document.getElementById(id);
-            let currentValue = parseInt(quantityInput.value);
-
-            // Garante que o valor não seja menor que 1
-            if (currentValue > 1) {
-                quantityInput.value = currentValue - 1;
-                updateTotalPrice(id); // Atualiza o preço total (se necessário)
-            }
-        }
-
-        // Função para atualizar o preço total (exemplo)
-        function updateTotalPrice(id) {
-            const quantityInput = document.getElementById(id);
-            const quantity = parseInt(quantityInput.value);
-
-            // Supondo que o preço unitário esteja em um atributo data-price
-            const priceElement = quantityInput.closest('.product-card').querySelector('.price');
-            const unitPrice = parseFloat(priceElement.getAttribute('data-price'));
-
-            // Calcula o preço total
-            const totalPrice = unitPrice * quantity;
-
-            // Atualiza o preço total na interface (se houver um elemento para isso)
-            const totalPriceElement = quantityInput.closest('.product-card').querySelector('.total-price');
-            if (totalPriceElement) {
-                totalPriceElement.textContent = `R$ ${totalPrice.toFixed(2)}`;
-            }
-        }
-
-        // Adiciona event listeners para os botões de quantidade
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.quantity-control').forEach(control => {
-                const increaseButton = control.querySelector('.increase');
-                const decreaseButton = control.querySelector('.decrease');
-                const quantityInput = control.querySelector('input[type="number"]');
-
-                if (increaseButton && decreaseButton && quantityInput) {
-                    increaseButton.addEventListener('click', () => increaseQuantity(quantityInput.id));
-                    decreaseButton.addEventListener('click', () => decreaseQuantity(quantityInput.id));
-                }
-            });
-        });
-
-        // Função de busca
-        const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const productCards = document.querySelectorAll('.product-card');
-
-            productCards.forEach(card => {
-                const productName = card.querySelector('h2').textContent.toLowerCase();
-                if (productName.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-
-        // Carrinho de compras (usando localStorage)
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        function addToCart(productName, price, quantity) {
-            const product = {
-                name: productName,
-                price: price,
-                quantity: quantity
-            };
-            cart.push(product);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${productName} adicionado ao carrinho!`);
-        }
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const productCard = button.closest('.product-card');
-                const productName = productCard.querySelector('h2').textContent;
-                const price = parseFloat(productCard.querySelector('.price').getAttribute('data-price'));
-                const quantity = parseInt(productCard.querySelector('input[type="number"]').value);
-                addToCart(productName, price, quantity);
-            });
-        });
 
     <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 
-<!-- Configuração do Firebase -->
+    <!-- Configuração do Firebase -->
 <script>
     const firebaseConfig = {
         apiKey: "AIzaSyAezCi_7GeTuK1QO1VcmNz7Tf_i72jU41k",
@@ -643,6 +493,101 @@
     // Inicializa o Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
-</script>
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Função para rolar as categorias
+        function scrollCategories(scrollAmount) {
+            const categories = document.querySelector('.categories');
+            categories.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Função para aumentar/diminuir quantidade
+        function increaseQuantity(id) {
+            const quantityInput = document.getElementById(id);
+            let currentValue = parseInt(quantityInput.value);
+            const maxValue = 99;
+            if (currentValue < maxValue) {
+                quantityInput.value = currentValue + 1;
+                updateTotalPrice(id);
+            }
+        }
+
+        function decreaseQuantity(id) {
+            const quantityInput = document.getElementById(id);
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+                updateTotalPrice(id);
+            }
+        }
+
+        function updateTotalPrice(id) {
+            const quantityInput = document.getElementById(id);
+            const quantity = parseInt(quantityInput.value);
+            const priceElement = quantityInput.closest('.product-card').querySelector('.price');
+            const unitPrice = parseFloat(priceElement.getAttribute('data-price'));
+            const totalPrice = unitPrice * quantity;
+            const totalPriceElement = quantityInput.closest('.product-card').querySelector('.total-price');
+            if (totalPriceElement) {
+                totalPriceElement.textContent = `R$ ${totalPrice.toFixed(2)}`;
+            }
+        }
+
+        // Função de busca
+        function searchProducts() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const productName = card.querySelector('h2').textContent.toLowerCase();
+                const productDescription = card.querySelector('.product-description').textContent.toLowerCase();
+                if (productName.includes(searchTerm) || productDescription.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Funções para abrir/fechar o modal de login
+        function openLoginModal() {
+            document.getElementById('login-modal').style.display = 'block';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        // Login com Facebook
+        function loginWithFacebook() {
+            const provider = new firebase.auth.FacebookAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    alert(`Bem-vindo, ${result.user.displayName}!`);
+                    closeLoginModal();
+                })
+                .catch((error) => {
+                    alert(`Erro: ${error.message}`);
+                });
+        }
+
+        // Login com Google
+        function loginWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    alert(`Bem-vindo, ${result.user.displayName}!`);
+                    closeLoginModal();
+                })
+                .catch((error) => {
+                    alert(`Erro: ${error.message}`);
+                });
+        }
+    </script>
 </body>
 </html>
