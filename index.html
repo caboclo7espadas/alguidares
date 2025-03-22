@@ -6,6 +6,64 @@
     <title>Catálogo de Alguidares - Umbanda</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos do user-options (copiados do primeiro HTML) */
+        .user-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .login-button {
+            background-color: #4267B2; /* Azul */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .delete-data-button {
+            background-color: #FF0000; /* Vermelho */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-button i, .delete-data-button i {
+            font-size: 18px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .search-bar i {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,13 +90,16 @@
                 </div>
                 <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
             </div>
+            <!-- Inserção do user-options -->
             <div class="user-options">
-                <a href="#" class="login-button" onclick="handleLogin()">
-                    <i class="fas fa-user"></i> Login / Cadastro
-                </a>
-                <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
-                    <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
-                </a>
+                <div class="button-group">
+                    <a href="#" class="login-button" onclick="handleLogin()">
+                        <i class="fas fa-user"></i> Login / Cadastro
+                    </a>
+                    <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
+                        <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
+                    </a>
+                </div>
                 <div class="search-bar">
                     <input type="text" id="search" placeholder="Buscar produto">
                     <i class="fas fa-search" onclick="searchProducts()"></i>
