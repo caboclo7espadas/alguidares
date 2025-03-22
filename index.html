@@ -9,43 +9,44 @@
 </head>
 <body>
     <header>
-    <div class="top-bar">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo Umbanda">
-            <h1>Catálogo de Alguidares</h1>
-        </div>
-        <div class="categories-container">
-            <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
-            <div class="categories">
-                <a href="#">Alguidares</a>
-                <a href="#">Velas Palitos 1Kg</a>
-                <a href="#">Quartinhas</a>
-                <a href="#">Velas 7 Dias</a>
-                <a href="#">Tinturas Magias</a>
-                <a href="#">Banhos de Ervas</a>
-                <a href="#">Tridentes</a>
-                <a href="#">Baralhos Diversos</a>
-                <a href="#">Pedras Naturais</a>
-                <a href="#">Pós e Óleos</a>
-                <a href="#">Pregos</a>
-                <a href="#">Parafusos</a>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Umbanda">
+                <h1>Catálogo de Alguidares</h1>
             </div>
-            <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
+            <div class="categories-container">
+                <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
+                <div class="categories">
+                    <a href="#">Alguidares</a>
+                    <a href="#">Velas Palitos 1Kg</a>
+                    <a href="#">Quartinhas</a>
+                    <a href="#">Velas 7 Dias</a>
+                    <a href="#">Tinturas Magias</a>
+                    <a href="#">Banhos de Ervas</a>
+                    <a href="#">Tridentes</a>
+                    <a href="#">Baralhos Diversos</a>
+                    <a href="#">Pedras Naturais</a>
+                    <a href="#">Pós e Óleos</a>
+                    <a href="#">Pregos</a>
+                    <a href="#">Parafusos</a>
+                </div>
+                <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
+            </div>
+            <div class="user-options">
+                <a href="#" class="login-button" onclick="openLoginModal()">
+                    <i class="fas fa-user"></i> Login / Cadastro
+                </a>
+                <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
+                    <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
+                </a>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Buscar produto">
+                    <i class="fas fa-search" onclick="searchProducts()"></i>
+                </div>
+            </div>
         </div>
-        <div class="user-options">
-    <a href="#" class="login-button" onclick="openLoginModal()">
-        <i class="fas fa-user"></i> Login / Cadastro
-    </a>
-    <!-- Botão para abrir a popup de exclusão de dados -->
-    <a href="#" class="delete-data-button" onclick="openDeleteDataPopup()">
-        <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
-    </a>
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar produto">
-        <i class="fas fa-search"></i>
-    </div>
-</div>
-</header>
+    </header>
+
     <main class="container">
         <div class="product-grid">
             <!-- Alguidar Nº 00000 -->
