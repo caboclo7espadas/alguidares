@@ -479,21 +479,25 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 
-    <!-- Configuração do Firebase -->
+    <!-- Importe o SDK do Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
 <script>
+    // Configuração do Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyAezCi_7GeTuK1QO1VcmNz7Tf_i72jU41k",
         authDomain: "terreiroescola-caboclo7espadas.firebaseapp.com",
         projectId: "terreiroescola-caboclo7espadas",
-        storageBucket: "terreiroescola-caboclo7espadas.firebasestorage.app",
+        storageBucket: "terreiroescola-caboclo7espadas.appspot.com", // Corrigido
         messagingSenderId: "825539380090",
-        appId: "G-WGYW9H46KN"
+        appId: "1:825539380090:web:abcd1234" // Substitua pelo seu appId correto
     };
 
     // Inicializa o Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
-    </script>
+</script>
 
     <!-- JavaScript -->
     <script>
