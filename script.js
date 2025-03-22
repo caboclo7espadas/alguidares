@@ -179,23 +179,3 @@ function scrollCategories(scrollAmount) {
         behavior: 'smooth'
     });
 }
-
-// Função para abrir a popup de exclusão de dados
-function openDeleteDataPopup() {
-    const popup = document.getElementById('delete-data-popup');
-    popup.style.display = 'flex';
-}
-
-// Função para fechar a popup de exclusão de dados
-function closeDeleteDataPopup() {
-    const popup = document.getElementById('delete-data-popup');
-    popup.style.display = 'none';
-}
-
-// Fechar a popup ao clicar fora do conteúdo
-window.addEventListener('click', (event) => {
-    const popup = document.getElementById('delete-data-popup');
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
-});

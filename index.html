@@ -9,44 +9,53 @@
 </head>
 <body>
     <header>
-        <div class="top-bar">
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo Umbanda">
-                <h1>Catálogo de Alguidares</h1>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Umbanda">
+            <h1>Catálogo de Alguidares</h1>
+        </div>
+        <div class="categories-container">
+            <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
+            <div class="categories">
+                <a href="#">Alguidares</a>
+                <a href="#">Velas Palitos 1Kg</a>
+                <a href="#">Quartinhas</a>
+                <a href="#">Velas 7 Dias</a>
+                <a href="#">Tinturas Magias</a>
+                <a href="#">Banhos de Ervas</a>
+                <a href="#">Tridentes</a>
+                <a href="#">Baralhos Diversos</a>
+                <a href="#">Pedras Naturais</a>
+                <a href="#">Pós e Óleos</a>
+                <a href="#">Pregos</a>
+                <a href="#">Parafusos</a>
             </div>
-            <div class="categories-container">
-                <button class="scroll-button left" onclick="scrollCategories(-100)">&#10094;</button>
-                <div class="categories">
-                    <a href="#">Alguidares</a>
-                    <a href="#">Velas Palitos 1Kg</a>
-                    <a href="#">Quartinhas</a>
-                    <a href="#">Velas 7 Dias</a>
-                    <a href="#">Tinturas Magias</a>
-                    <a href="#">Banhos de Ervas</a>
-                    <a href="#">Tridentes</a>
-                    <a href="#">Baralhos Diversos</a>
-                    <a href="#">Pedras Naturais</a>
-                    <a href="#">Pós e Óleos</a>
-                    <a href="#">Pregos</a>
-                    <a href="#">Parafusos</a>
-                </div>
-                <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
-            </div>
+            <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
+        </div>
+        <div class="user-options">
+            <a href="#" class="login-button" onclick="openLoginModal()">
+                <i class="fas fa-user"></i> Login / Cadastro
             <div class="user-options">
-                <a href="#" class="login-button" onclick="openLoginModal()">
-                    <i class="fas fa-user"></i> Login / Cadastro
-                </a>
-                <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
-                    <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
-                </a>
-                <div class="search-bar">
-                    <input type="text" id="search" placeholder="Buscar produto">
-                    <i class="fas fa-search" onclick="searchProducts()"></i>
-                </div>
+    <a href="#" class="login-button" onclick="openLoginModal()">
+        <i class="fas fa-user"></i> Login / Cadastro
+    </a>
+    <!-- Botão para abrir a popup de exclusão de dados -->
+    <a href="#" class="delete-data-button" onclick="openDeleteDataPopup()">
+        <i class="fas fa-trash-alt"></i> Solicitar Exclusão de Dados
+    </a>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar produto">
+        <i class="fas fa-search"></i>
+    </div>
+</div>
+    </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produto">
+                <i class="fas fa-search"></i>
             </div>
         </div>
-    </header>
-
+    </div>
+</header>
     <main class="container">
         <div class="product-grid">
             <!-- Alguidar Nº 00000 -->
@@ -460,48 +469,102 @@
     </div>
 </footer>
 
+<!-- Popup de Exclusão de Dados -->
+<div id="delete-data-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeDeleteDataPopup()">&times;</span>
+        <h1>Solicitar Exclusão de Dados</h1>
+        <p>
+            Se você deseja solicitar a exclusão dos seus dados pessoais armazenados em nosso sistema, siga as instruções abaixo.
+        </p>
+
+        <h2>Como Solicitar a Exclusão</h2>
+        <p>
+            Para solicitar a exclusão dos seus dados, entre em contato conosco por e-mail ou telefone:
+        </p>
+        <ul>
+            <li><strong>E-mail:</strong> <a href="mailto:terreiro.umbanda.caboclo7espadas@gmail.com">terreiro.umbanda.caboclo7espadas@gmail.com</a></li>
+            <li><strong>Telefone:</strong> +55 11 98255-1647</li>
+        </ul>
+        <p>
+            Ao entrar em contato, forneça as seguintes informações:
+        </p>
+        <ul>
+            <li><strong>Nome completo:</strong> O nome associado à sua conta.</li>
+            <li><strong>E-mail:</strong> O endereço de e-mail associado à sua conta.</li>
+            <li><strong>Assunto:</strong> Use o assunto "Solicitação de Exclusão de Dados".</li>
+            <li><strong>Mensagem:</strong> Inclua uma breve descrição da sua solicitação.</li>
+        </ul>
+
+        <h2>O Que Acontece Depois?</h2>
+        <p>
+            Após recebermos sua solicitação, nossa equipe entrará em contato em até <strong>7 dias úteis</strong> para confirmar a exclusão dos seus dados.
+        </p>
+
+        <h2>Quais Dados Serão Excluídos?</h2>
+        <p>
+            Ao solicitar a exclusão, os seguintes dados serão removidos do nosso sistema:
+        </p>
+        <ul>
+            <li>Seu perfil de usuário (nome, e-mail, foto, etc.).</li>
+            <li>Dados de autenticação (credenciais de login).</li>
+            <li>Quaisquer outras informações pessoais associadas à sua conta.</li>
+        </ul>
+
+        <h2>Dúvidas ou Ajuda?</h2>
+        <p>
+            Se você tiver alguma dúvida ou precisar de assistência, entre em contato conosco pelo e-mail <a href="mailto:terreiro.umbanda.caboclo7espadas@gmail.com">terreiro.umbanda.caboclo7espadas@gmail.com</a> ou pelo telefone <strong>+55 11 98255-1647</strong>.
+        </p>
+    </div>
+</div>
+
 <!-- Créditos abaixo do rodapé -->
 <div class="footer-credits">
     <p>Criado com ❤️ por <strong>Black Tuxedo E-Commerce Brasil</strong> | CNPJ: 37.258.590/0001-67</p>
 </div>
+    </div>
+</footer>
 
-    <!-- JavaScript -->
+    <!-- Inserir o JavaScript aqui -->
     <script>
-        // Função para rolar as categorias
-        function scrollCategories(scrollAmount) {
-            const categories = document.querySelector('.categories');
-            categories.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-
-        // Função para aumentar/diminuir quantidade
+        // Função para aumentar a quantidade
         function increaseQuantity(id) {
             const quantityInput = document.getElementById(id);
             let currentValue = parseInt(quantityInput.value);
-            const maxValue = 99;
+
+            // Define um limite máximo (opcional)
+            const maxValue = 99; // Você pode ajustar esse valor
             if (currentValue < maxValue) {
                 quantityInput.value = currentValue + 1;
-                updateTotalPrice(id);
+                updateTotalPrice(id); // Atualiza o preço total (se necessário)
             }
         }
 
+        // Função para diminuir a quantidade
         function decreaseQuantity(id) {
             const quantityInput = document.getElementById(id);
             let currentValue = parseInt(quantityInput.value);
+
+            // Garante que o valor não seja menor que 1
             if (currentValue > 1) {
                 quantityInput.value = currentValue - 1;
-                updateTotalPrice(id);
+                updateTotalPrice(id); // Atualiza o preço total (se necessário)
             }
         }
 
+        // Função para atualizar o preço total (exemplo)
         function updateTotalPrice(id) {
             const quantityInput = document.getElementById(id);
             const quantity = parseInt(quantityInput.value);
+
+            // Supondo que o preço unitário esteja em um atributo data-price
             const priceElement = quantityInput.closest('.product-card').querySelector('.price');
             const unitPrice = parseFloat(priceElement.getAttribute('data-price'));
+
+            // Calcula o preço total
             const totalPrice = unitPrice * quantity;
+
+            // Atualiza o preço total na interface (se houver um elemento para isso)
             const totalPriceElement = quantityInput.closest('.product-card').querySelector('.total-price');
             if (totalPriceElement) {
                 totalPriceElement.textContent = `R$ ${totalPrice.toFixed(2)}`;
@@ -521,6 +584,65 @@
                 }
             });
         });
-    </script>
+
+        // Função de busca
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const productName = card.querySelector('h2').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Carrinho de compras (usando localStorage)
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(productName, price, quantity) {
+            const product = {
+                name: productName,
+                price: price,
+                quantity: quantity
+            };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} adicionado ao carrinho!`);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productCard = button.closest('.product-card');
+                const productName = productCard.querySelector('h2').textContent;
+                const price = parseFloat(productCard.querySelector('.price').getAttribute('data-price'));
+                const quantity = parseInt(productCard.querySelector('input[type="number"]').value);
+                addToCart(productName, price, quantity);
+            });
+        });
+
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+<!-- Configuração do Firebase -->
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAezCi_7GeTuK1QO1VcmNz7Tf_i72jU41k",
+        authDomain: "terreiroescola-caboclo7espadas.firebaseapp.com",
+        projectId: "terreiroescola-caboclo7espadas",
+        storageBucket: "terreiroescola-caboclo7espadas.firebasestorage.app",
+        messagingSenderId: "825539380090",
+        appId: "G-WGYW9H46KN"
+    };
+
+    // Inicializa o Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+</script>
 </body>
 </html>
