@@ -33,7 +33,7 @@
                 <button class="scroll-button right" onclick="scrollCategories(100)">&#10095;</button>
             </div>
             <div class="user-options">
-                <a href="#" class="login-button" onclick="openLoginModal()">
+                <a href="#" class="login-button" onclick="handleLogin()">
                     <i class="fas fa-user"></i> Login / Cadastro
                 </a>
                 <a href="https://caboclo7espadas.github.io/alguidares/exclusao-dados.html" class="delete-data-button">
@@ -461,110 +461,37 @@
         <p>Criado com ❤️ por <strong>Black Tuxedo E-Commerce Brasil</strong> | CNPJ: 37.258.590/0001-67</p>
     </div>
 
-    <!-- Modal de Login -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
-            <h2>Login / Cadastro</h2>
-            <button class="facebook-login" onclick="loginWithFacebook()">
-                <i class="fab fa-facebook"></i> Continuar com Facebook
-            </button>
-            <button class="google-login" onclick="loginWithGoogle()">
-                <i class="fab fa-google"></i> Continuar com Google
-            </button>
-        </div>
-    </div>
-
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 
-    <!-- Importe o SDK do Firebase -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-
-<script>
-    // Configuração do Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyAezCi_7GeTuK1QO1VcmNz7Tf_i72jU41k",
-        authDomain: "terreiroescola-caboclo7espadas.firebaseapp.com",
-        projectId: "terreiroescola-caboclo7espadas",
-        storageBucket: "terreiroescola-caboclo7espadas.appspot.com", // Corrigido
-        messagingSenderId: "825539380090",
-        appId: "1:825539380090:web:abcd1234" // Substitua pelo seu appId correto
-    };
-
-    // Inicializa o Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-</script>
-
     <!-- JavaScript -->
     <script>
-        // Função para rolar as categorias
-        function scrollCategories(scrollAmount) {
-            const categories = document.querySelector('.categories');
-            categories.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAezCi_7GeTuK1QO1VcmNz7Tf_i72jU41k",
+            authDomain: "terreiroescola-caboclo7espadas.firebaseapp.com",
+            projectId: "terreiroescola-caboclo7espadas",
+            storageBucket: "terreiroescola-caboclo7espadas.appspot.com",
+            messagingSenderId: "825539380090",
+            appId: "1:825539380090:web:abcd1234" // Substitua pelo seu appId correto
+        };
 
-        // Função para aumentar/diminuir quantidade
-        function increaseQuantity(id) {
-            const quantityInput = document.getElementById(id);
-            let currentValue = parseInt(quantityInput.value);
-            const maxValue = 99;
-            if (currentValue < maxValue) {
-                quantityInput.value = currentValue + 1;
-                updateTotalPrice(id);
+        // Inicializa o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Função para lidar com o login
+        function handleLogin() {
+            const loginMethod = prompt("Escolha o método de login:\n1 - Facebook\n2 - Google");
+
+            if (loginMethod === "1") {
+                loginWithFacebook();
+            } else if (loginMethod === "2") {
+                loginWithGoogle();
+            } else {
+                alert("Opção inválida. Por favor, tente novamente.");
             }
-        }
-
-        function decreaseQuantity(id) {
-            const quantityInput = document.getElementById(id);
-            let currentValue = parseInt(quantityInput.value);
-            if (currentValue > 1) {
-                quantityInput.value = currentValue - 1;
-                updateTotalPrice(id);
-            }
-        }
-
-        function updateTotalPrice(id) {
-            const quantityInput = document.getElementById(id);
-            const quantity = parseInt(quantityInput.value);
-            const priceElement = quantityInput.closest('.product-card').querySelector('.price');
-            const unitPrice = parseFloat(priceElement.getAttribute('data-price'));
-            const totalPrice = unitPrice * quantity;
-            const totalPriceElement = quantityInput.closest('.product-card').querySelector('.total-price');
-            if (totalPriceElement) {
-                totalPriceElement.textContent = `R$ ${totalPrice.toFixed(2)}`;
-            }
-        }
-
-        // Função de busca
-        function searchProducts() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
-            const productCards = document.querySelectorAll('.product-card');
-
-            productCards.forEach(card => {
-                const productName = card.querySelector('h2').textContent.toLowerCase();
-                const productDescription = card.querySelector('.product-description').textContent.toLowerCase();
-                if (productName.includes(searchTerm) || productDescription.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Funções para abrir/fechar o modal de login
-        function openLoginModal() {
-            document.getElementById('login-modal').style.display = 'block';
-        }
-
-        function closeLoginModal() {
-            document.getElementById('login-modal').style.display = 'none';
         }
 
         // Login com Facebook
@@ -573,7 +500,6 @@
             auth.signInWithPopup(provider)
                 .then((result) => {
                     alert(`Bem-vindo, ${result.user.displayName}!`);
-                    closeLoginModal();
                 })
                 .catch((error) => {
                     alert(`Erro: ${error.message}`);
@@ -586,7 +512,6 @@
             auth.signInWithPopup(provider)
                 .then((result) => {
                     alert(`Bem-vindo, ${result.user.displayName}!`);
-                    closeLoginModal();
                 })
                 .catch((error) => {
                     alert(`Erro: ${error.message}`);

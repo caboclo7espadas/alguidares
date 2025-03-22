@@ -380,3 +380,36 @@ body {
 .delete-data-button:hover {
     background-color: #ff1a1a;
 }
+
+/* Estilos do botão de login */
+.login-button {
+    background-color: #4267B2; /* Azul do Facebook */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-button i {
+    font-size: 18px;
+}
+
+/* Estilos da barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar i {
+    cursor: pointer;
+}

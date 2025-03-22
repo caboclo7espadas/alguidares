@@ -137,26 +137,32 @@ function scrollCategories(scrollAmount) {
 }
 
 
-// Funções para abrir/fechar o modal
-function openLoginModal() {
-    document.getElementById('login-modal').style.display = 'block';
-}
+// Configuração do Firebase
+const firebaseConfig = {
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_DOMINIO.firebaseapp.com",
+    projectId: "SEU_PROJECT_ID",
+    storageBucket: "SEU_STORAGE_BUCKET",
+    messagingSenderId: "SEU_SENDER_ID",
+    appId: "SEU_APP_ID"
+};
 
-function closeLoginModal() {
-    document.getElementById('login-modal').style.display = 'none';
-}
+// Inicializa o Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-// Login com Google
-function loginWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-        .then((result) => {
-            alert(`Bem-vindo, ${result.user.displayName}!`);
-            closeLoginModal();
-        })
-        .catch((error) => {
-            alert(`Erro: ${error.message}`);
-        });
+// Função para lidar com o login
+function handleLogin() {
+    // Pergunta ao usuário qual método de login ele deseja usar
+    const loginMethod = prompt("Escolha o método de login:\n1 - Facebook\n2 - Google");
+
+    if (loginMethod === "1") {
+        loginWithFacebook();
+    } else if (loginMethod === "2") {
+        loginWithGoogle();
+    } else {
+        alert("Opção inválida. Por favor, tente novamente.");
+    }
 }
 
 // Login com Facebook
@@ -165,19 +171,22 @@ function loginWithFacebook() {
     auth.signInWithPopup(provider)
         .then((result) => {
             alert(`Bem-vindo, ${result.user.displayName}!`);
-            closeLoginModal();
         })
         .catch((error) => {
             alert(`Erro: ${error.message}`);
         });
 }
 
-function scrollCategories(scrollAmount) {
-    const categories = document.querySelector('.categories');
-    categories.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
+// Login com Google
+function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            alert(`Bem-vindo, ${result.user.displayName}!`);
+        })
+        .catch((error) => {
+            alert(`Erro: ${error.message}`);
+        });
 }
 
 // Função para abrir a popup de exclusão de dados
